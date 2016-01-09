@@ -1,0 +1,40 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context="rs.etf.mv153095.komunikator_master.OpenActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/FrameLayout_mainFrame">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/TextView_header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/first_page_header"
+        android:fontFamily="century-gothic"
+        android:paddingTop="6dp"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textSize="11pt" />
+
+    <GridView
+        android:id="@+id/GridView_chooseProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TextView_header"
+        android:numColumns="auto_fit"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbars="vertical"
+        android:smoothScrollbar="true"></GridView>
+    </RelativeLayout>
+    </FrameLayout>
+</FrameLayout>
