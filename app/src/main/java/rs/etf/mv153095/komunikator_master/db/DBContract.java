@@ -9,52 +9,76 @@ public final class DBContract {
     public DBContract() {
     }
 
+    // tabela za admina
     public static abstract class ComAdmin implements BaseColumns {
+        // ime tabele
         public static final String TABLE_NAME = "com_admin";
-        // public static final String COLUMN_NAME_ID = "_id";
+
+        // password za prelazak u ADMIN rezim rada
         public static final String COLUMN_NAME_PASSWORD = "password";
-        public static final String COLUMN_NAME_USERS = "users";
 
+        // profili usera koji pripadaju jednom adminu se uvezuju preko vezne tabele!!!
+
+        // spisak svih kolona tabele
         public static final String[] COLUMNS = {_ID,
-                COLUMN_NAME_PASSWORD,
-                COLUMN_NAME_USERS};
+                COLUMN_NAME_PASSWORD};
 
     }
 
+    // tabela za usera
     public static abstract class ComUser implements BaseColumns {
+        // ime tabele
         public static final String TABLE_NAME = "com_user";
-        public static final String COLUMN_NAME_NAME = "name";
+
+        // ime usera
+        public static final String COLUMN_NAME_FIRST_NAME = "first_name";
+        // prezime usera
         public static final String COLUMN_NAME_LAST_NAME = "last_name";
-        public static final String COLUMN_NAME_OPTIONS = "options";
-        // public static final String COLUMN_NAME_ID = "_id";
+
+        // opcije usera se uvezuju preko vezne tabele!!!
+
+        // spisak svih kolona tabele
         public static final String[] COLUMNS = {_ID,
-                COLUMN_NAME_NAME,
-                COLUMN_NAME_LAST_NAME,
-                COLUMN_NAME_OPTIONS};
+                COLUMN_NAME_FIRST_NAME,
+                COLUMN_NAME_LAST_NAME};
     }
 
+    // opcija u komunikatoru
     public static abstract class ComOption implements BaseColumns {
+        // ime tabele
         public static final String TABLE_NAME = "com_option";
+        // ime opcije
         public static final String COLUMN_NAME_NAME = "name";
+        // opis opcije - tekst finalne opcije
         public static final String COLUMN_NAME_DESCRIPTION = "description";
+        // slika opcije
         public static final String COLUMN_NAME_IMG = "img";
+        // zvuk opcije
         public static final String COLUMN_NAME_VOICE = "voice";
-        public static final String COLUMN_NAME_OWNER = "owner";
-        public static final String COLUMN_NAME_NEW_SETTINGS = "new_settings";
-        public static final String COLUMN_NAME_IS_DEFAULT = "is_default";
+
+        // vlasnik - ako je sistem onda je ovo polje 0, a uvezivanje ide preko vezne tabele
+        //public static final String COLUMN_NAME_OWNER = "owner";
+        // new setting ide preko vezne tabele
+        //public static final String COLUMN_NAME_NEW_SETTINGS = "new_settings";
+        //public static final String COLUMN_NAME_IS_DEFAULT = "is_default";
+
+        // da li je opcija krajnja
         public static final String COLUMN_NAME_IS_FINAL = "is_final";
-        public static final String COLUMN_NAME_STAT = "stat";
-        // public static final String COLUMN_NAME_ID = "_id";
+
+        // statistika ide preko vezne tabele
+        //public static final String COLUMN_NAME_STAT = "stat";
+
+        // spisak svih kolona tabele
         public static final String[] COLUMNS = {_ID,
                 COLUMN_NAME_NAME,
                 COLUMN_NAME_DESCRIPTION,
                 COLUMN_NAME_IMG,
                 COLUMN_NAME_VOICE,
-                COLUMN_NAME_OWNER,
-                COLUMN_NAME_NEW_SETTINGS,
-                COLUMN_NAME_IS_DEFAULT,
-                COLUMN_NAME_IS_FINAL,
-                COLUMN_NAME_STAT};
+                //COLUMN_NAME_OWNER,
+                //COLUMN_NAME_NEW_SETTINGS,
+                //COLUMN_NAME_IS_DEFAULT,
+                COLUMN_NAME_IS_FINAL};
+        //COLUMN_NAME_STAT};
     }
 
     public static abstract class ComNewOptionSettings implements BaseColumns {
@@ -77,4 +101,6 @@ public final class DBContract {
     }
 
     // TODO: add Stat Table... {lastClick, allClicks, ...}
+
+
 }

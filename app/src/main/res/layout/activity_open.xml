@@ -9,9 +9,9 @@
          is needed to present your content, e.g. VideoView, SurfaceView,
          TextureView, etc. -->
     <FrameLayout
+        android:id="@+id/FrameLayout_mainFrame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/FrameLayout_mainFrame">
+        android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -21,9 +21,8 @@
         android:layout_height="50dp"
         android:background="@drawable/first_page_header"
         android:fontFamily="century-gothic"
-        android:paddingTop="6dp"
+        android:gravity="center"
         android:text="@string/app_name"
-        android:textAlignment="center"
         android:textSize="11pt" />
 
     <GridView
